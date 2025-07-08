@@ -59,7 +59,7 @@ CPPFLAGS += -DOPTEE_TZRAM_SIZE=$(OPTEE_TZRAM_SIZE)
 include make_helpers/dep.mk
 
 $(call GEN_DEP_RULES,bl2,emicfg bl2_boot_ram bl2_boot_nand_nmbm bl2_dev_mmc mtk_efuse bl2_plat_init bl2_plat_setup mt7988_gpio pll dtb)
-$(call MAKE_DEP,bl2,emicfg,DRAM_USE_COMB DRAM_USE_DDR4 DRAM_SIZE_LIMIT DRAM_DEBUG_LOG)
+$(call MAKE_DEP,bl2,emicfg,DRAM_USE_COMB DDR4_4BG_MODE DRAM_USE_DDR4 DRAM_SIZE_LIMIT DRAM_DEBUG_LOG)
 $(call MAKE_DEP,bl2,bl2_plat_init,BL2_COMPRESS I2C_SUPPORT EIP197_SUPPORT BL2_CPU_FULL_SPEED)
 $(call MAKE_DEP,bl2,bl2_plat_setup,BOOT_DEVICE TRUSTED_BOARD_BOOT)
 $(call MAKE_DEP,bl2,bl2_dev_mmc,BOOT_DEVICE)
